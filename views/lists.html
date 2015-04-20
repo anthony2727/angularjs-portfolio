@@ -1,7 +1,7 @@
 <div>
 	<ul class="thumbnails">
-		<li class="thumbnail">
-			
+		<li class="thumbnail" ng-repeat="shot in shots">
+			<img ng-src="{{shot.image_teaser_url}}"/>
 		</li>
 	</ul>
 </div>
