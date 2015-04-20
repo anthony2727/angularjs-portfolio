@@ -3,8 +3,33 @@
 	<title>Portfolio | BY: Anthony Rodriguez</title>
 	<script type="text/javascript" src="/public/components/angularjs/angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="/public/components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/public/components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/public/components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="/public/components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/public/components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/style.css">
+
 </head>
 <body ng-app="portfolioApp">
 
+	<div class="container">
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">
+						PORTFOLIO
+					</a>
+				</div>
+				<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+			</div>
+		</nav>
+		<!-- END of Header -->
+		<div ui-view></div>
+
+	</div>
 </body>
+
+
 </html>
