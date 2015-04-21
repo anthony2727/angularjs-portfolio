@@ -1,7 +1,9 @@
-<div>
-	<ul class="thumbnails">
-		<li class="thumbnail" ng-repeat="shot in shots">
-			<img ng-src="{{shot.image_teaser_url}}"/>
-		</li>
-	</ul>
+
+
+<div class="row">
+  <div class="col-xs-6 col-md-3" ng-repeat="shot in shots">
+    <a href="#" class="thumbnail">
+      <img ng-src="{{shot.image_url}}" alt="">
+    </a>
+  </div>
 </div>
