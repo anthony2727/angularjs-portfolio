@@ -9,23 +9,37 @@ angular.module('portfolioApp.controllers',[])
 		var url = "https://api.dribbble.com/" + resource
 		return $http.jsonp(url, {params:params})
 	}
-
 	return {
+		shots : function(type, params){
+			return load('shots/' + type, params)
+		},
 
-		shots : function(type){
-			return load('shots/' + type)
+		shot : function(id, params){
+			return load('shots/' + id, params)
 		}
 
 	}
 })
 
 .controller('shotsController',function($scope, dribbble, $stateParams){
-	
-	$scope.shots = {}
-	console.log($stateParams)
-    dribbble.shots('popular').success(function(result){
-    	console.log(result)
+	var page = 1
+	var maxPages = null
+	$scope.shots = []
+
+    dribbble.shots($stateParams.list).success(function(result){
+    	maxPages = result.pages
+    	if (maxPages>0)
 		$scope.shots = result.shots
+
     })
 
+    $scope.loadMore = function(){
+    	var params = {}
+    	if (maxPages>0 && page<=maxPages){
+	    	params.page = ++page
+	    	dribbble.shots('popular', params).success(function(result){
+				$scope.shots = $scope.shots.concat(result.shots)
+	    	})
+    	}
+    }
 })

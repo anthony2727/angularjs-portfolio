@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="/public/components/angular-route/angular-route.min.js"></script>
 	<script type="text/javascript" src="/public/components/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script type="text/javascript" src="/controllers/shotsController.js"></script>
+	<script type="text/javascript" src="/controllers/shotController.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="/public/components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/public/css/style.css">
@@ -23,11 +24,15 @@
 						PORTFOLIO
 					</a>
 				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#/popular">Popular <span class="sr-only">(current)</span></a></li>
+					<li><a href="#/everyone">Everyone</a></li>
+				</ul>
 				<p class="navbar-text navbar-right">Signed in as: <a href="#" class="navbar-link">Anthony Rodriguez </a></p>
 			</div>
 		</nav>
 		<!-- END of Header -->
-			<div ui-view></div>
+		<div ui-view></div>
 	</div>
 </body>
 </html>
