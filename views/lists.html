@@ -1,9 +1,22 @@
 
-
 <div class="row">
-  <div class="col-xs-6 col-md-3" ng-repeat="shot in shots">
-    <a href="#" class="thumbnail">
-      <img ng-src="{{shot.image_url}}" alt="">
-    </a>
-  </div>
+	<div class="col-xs-6 col-md-3 shot" ng-repeat="shot in shots">
+		<div class="thumbnail">
+			<a href="#">
+				<img ng-src="{{shot.image_url}}" alt="">
+			</a>
+			<strong class="title">
+				{{shot.title}}
+			</strong>
+			<div class="stats">
+				<span class="stat"><i class="fa fa-thumbs-up"></i>{{shot.likes_count}}</span>
+				<span><i class="fa fa-eye"></i>{{ shot.views_count }}</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-2 col-md-offset-5">
+  		<button ng-click="loadMore()" class="btn btn-primary bottom-button">Load more</button>
+	</div>
 </div>
