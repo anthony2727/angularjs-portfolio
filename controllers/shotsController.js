@@ -1,4 +1,5 @@
 'use strict'
+
 angular.module('portfolioApp.controllers',[])
 
 .factory('dribbble', function($http){
@@ -21,25 +22,25 @@ angular.module('portfolioApp.controllers',[])
 	}
 })
 
-.controller('shotsController',function($scope, dribbble, $stateParams){
-	var page = 1
-	var maxPages = null
-	$scope.shots = []
+.factory('pagedResult', function(dribbble){
+	
+	return function pagedResult(list, collection_name){
+		
+		var params = { page:0 }
+		var collection = this[collection_name] = []
 
-    dribbble.shots($stateParams.list).success(function(result){
-    	maxPages = result.pages
-    	if (maxPages>0)
-		$scope.shots = result.shots
-
-    })
-
-    $scope.loadMore = function(){
-    	var params = {}
-    	if (maxPages>0 && page<=maxPages){
-	    	params.page = ++page
-	    	dribbble.shots('popular', params).success(function(result){
-				$scope.shots = $scope.shots.concat(result.shots)
+	    this.loadMore = function(){
+		    ++params.page
+	    	dribbble.shots(list, self.params).success(function(result){
+				[].push.apply(collection, result.data.collection_name)
 	    	})
-    	}
-    }
+	    }
+
+	    return this;
+	}
+})
+
+.controller('shotsController',function($scope, pagedResult, $stateParams){
+
+	pagedResult($stateParams.list, 'shots').loadMore()
 })

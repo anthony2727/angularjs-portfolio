@@ -4,7 +4,7 @@
 				<img ng-src="{{shot.image_url}}"/>
 			</div>
 			<div class="row">
-				{{shot.description}}
+				<span ng-bind-html="trust(shot.description)"></span>
 			</div>
 		</div>
 		<div class="col-xs-6 col-md-6">
