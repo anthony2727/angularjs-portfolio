@@ -1,7 +1,9 @@
+angular.module('portfolioApp.services', [])
+angular.module('portfolioApp.controllers',[])
 
-angular.module('portfolioApp',['ngRoute', 'ui.router','portfolioApp.controllers'])
+var main = angular.module('portfolioApp',['ngRoute', 'ui.router','portfolioApp.controllers', 'portfolioApp.services', 'portfolioApp.controllers'])
 
-.config(function($stateProvider){
+main.config(function($stateProvider){
 
 	$stateProvider.state('shots', {
 		url: '/:list',
