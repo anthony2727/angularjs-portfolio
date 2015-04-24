@@ -11,16 +11,22 @@
 	<!-- Services -->
 	<script type="text/javascript" src="/services/dribbble.js"></script>
 	<script type="text/javascript" src="/services/pagedService.js"></script>
+	<script type="text/javascript" src="/services/github.js"></script>
 
 	<!-- Controllers | Dependency: Services -->
 	<script type="text/javascript" src="/controllers/shotsController.js"></script>
 	<script type="text/javascript" src="/controllers/shotController.js"></script>
 	<script type="text/javascript" src="/controllers/navController.js"></script>
+	<script type="text/javascript" src="/controllers/profileController.js"></script>
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Hind:400,500' rel='stylesheet' type='text/css'>
 
 	
 	<link rel="stylesheet" type="text/css" href="/public/components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/public/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/public/components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/profile.css">
 
 </head>
 <body ng-app="portfolioApp">
@@ -36,7 +42,7 @@
 					<li ng-class="{active: c.isActive('/popular')}"><a href="#/popular">Popular <span class="sr-only">(current)</span></a></li>
 					<li ng-class="{active: c.isActive('/everyone')}"><a href="#/everyone">Everyone</a></li>
 				</ul>
-				<p class="navbar-text navbar-right">Signed in as: <a href="#" class="navbar-link">Anthony Rodriguez </a></p>
+				<p class="navbar-text navbar-right" style="margin-right: 10px">Developed by: <a href="#/profile/anthony2727" class="navbar-link">Anthony Rodriguez </a></p>
 			</div>
 		</nav>
 		<!-- END of Header -->
