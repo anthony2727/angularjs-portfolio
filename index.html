@@ -15,6 +15,7 @@
 	<!-- Controllers | Dependency: Services -->
 	<script type="text/javascript" src="/controllers/shotsController.js"></script>
 	<script type="text/javascript" src="/controllers/shotController.js"></script>
+	<script type="text/javascript" src="/controllers/navController.js"></script>
 
 	
 	<link rel="stylesheet" type="text/css" href="/public/components/bootstrap/dist/css/bootstrap.css">
@@ -27,13 +28,13 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="#/popular">
 						PORTFOLIO
 					</a>
 				</div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#/popular">Popular <span class="sr-only">(current)</span></a></li>
-					<li><a href="#/everyone">Everyone</a></li>
+				<ul class="nav navbar-nav" ng-controller="navController as c">
+					<li ng-class="{active: c.isActive('/popular')}"><a href="#/popular">Popular <span class="sr-only">(current)</span></a></li>
+					<li ng-class="{active: c.isActive('/everyone')}"><a href="#/everyone">Everyone</a></li>
 				</ul>
 				<p class="navbar-text navbar-right">Signed in as: <a href="#" class="navbar-link">Anthony Rodriguez </a></p>
 			</div>
