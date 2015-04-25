@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row profile">
+	<div class="row profile">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
@@ -16,13 +16,66 @@
 						Web/Mobile Developer
 					</div>
 					<div class="profile-usertitle-job">
-						{{profile.location}}
+						<i class="fa fa-globe"> {{profile.location}}</i> 
+					</div>
+					<div id="profile-info-container">
+						<div class="profile-info">
+							<i class="fa fa-envelope"><a ng-href="mailto:{{profile.email}}"> {{profile.email}}</a> </i> 
+						</div>
+						<div class="profile-info">
+							<i class="fa fa-laptop"> <a ng-href="{{profile.blog}}"> {{profile.blog}}</a></i> 
+						</div>
 					</div>
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
 					<a href="{{profile.html_url}}" class="btn btn-success btn-sm"><i class="fa fa-4x fa-github"></i>Visit Github Profile</a>
+				</div>
+				<hr>
+
+				<div class="wow fadeInDown animated" style="visibility: visible; margin:10px;">
+					<div class="skill">
+						<h2>My Skills</h2>
+						<p>I have hands-on experience using Amazon Web Services (AWS), Cisco equipments, Asterisk (FreePBX), Windows Server (2012), environment configuration tools (Vagrant, Docker) and programming languages like: Java, Php, Javascript, Python (Basic), Ruby (Basic), Css, Html, multiple platforms like: Mac OS X, Ubuntu and Windows. Also, consider my proficiency in Spanish and English as an important asset for your company</p>
+
+						<div class="progress-wrap">
+							<h3>Python</h3>
+							<div class="progress">
+								<div class="progress-bar  progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+									<span class="bar-width">20%</span>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="progress-wrap">
+							<h3>PHP / Laravel</h3>
+							<div class="progress">
+								<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+									<span class="bar-width">95%</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="progress-wrap">
+							<h3>Swift / iOS</h3>
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+									<span class="bar-width">80%</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="progress-wrap">
+							<h3>Javascript / AngularJS</h3>
+							<div class="progress">
+								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+									<span class="bar-width">90%</span>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->
@@ -54,40 +107,51 @@
 			</div>
 		</div>
 		<div class="col-md-9">
-
+			<div class="row">
 			<div class="jumbotron">
 				<h1>About Me:</h1>
 				<p>At the moment I'm a freelancer developer based in New York City, USA.</p>
 				<p> Founder of CAPITALOFCODE.COM</p>
 
+				Creative and solution-focused professional dedicated to develop web, mobile applications and IT solution. Highly motivated to research and learn more about emerging technologies, focusing on scalable and maintainable solutions.
+
 				Today, I spend most of my time programming for iOS and the Web using the Swift programming language and PHP.
-				If you are interested in hiring, I'm open to join a great team that is currently working on creating the new big thing! Looking forward to use my experience with PHP and my new passion, Swift for IOS, as well as the rest of my set of skills.
+				
 
 			</div>
-            <div class="profile-content">
-            	<div class="row">
-	            	<div class="col-md-6">
-		            	<div class="profile-stats">
-						  	<i class="fa fa-5x fa-github-alt"></i> 
-						  	<div>Repositories</div>
-						  	<div>{{profile.public_repos}}</div>
-					  	</div>
-					  	<div>
-					  		<span ng-repeat="repo in repos" class="label label-default"><a ng-href="{{repo.html_url}}">{{repo.name}}</a></span>	
-					  	</div>
-				 	</div>
-				 	<div class="col-md-6">
-		            	<div class="profile-stats">
-						  	<i class="fa fa-5x fa-gittip"></i>
-						  	<div>Gists</div>
-						  	<div>{{profile.public_gists}}</div>
-					  	</div>
-					  	
-				 	</div>
-				 </div>
-            </div>
+			</div>
+
+			<div class="row">
+			<div class="col-md-6">	
+				<h1><i class="fa fa-keyboard-o"></i> I'M CURRENTLY AVAILABLE FOR HIRING!</h1>
+				<P>If you are interested in hiring, I'm open to join a great team that is currently working on creating the new big thing! Looking forward to use my experience with PHP and my new passion, Swift for IOS, as well as the rest of my skills.</P>
+				<button class="btn btn-info"><i class="fa fa-paper-plane"></i> CONTACT ME</button>
+			</div>
+
+			<div class="col-md-6 profile-content">	
+					<div class="col-md-9">
+						<div class="profile-stats">
+							<i class="fa fa-5x fa-github-alt"></i> 
+							<div>Repositories</div>
+							<div>{{profile.public_repos}}</div>
+						</div>
+						<div>
+							<span ng-repeat="repo in repos" class="label label-info"><a ng-href="{{repo.html_url}}">{{repo.name}}</a></span>	
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="profile-stats">
+							<i class="fa fa-5x fa-gittip"></i>
+							<div>Gists</div>
+							<div>{{profile.public_gists}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
 		</div>
 	</div>
+</div>
 </div>
 <center>
 

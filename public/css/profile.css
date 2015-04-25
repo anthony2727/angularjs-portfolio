@@ -12,6 +12,21 @@ body {
   text-align: center;
 }
 
+#profile-info-container{
+  display: inline-block;
+}
+
+.profile-info{
+  font-weight: 600px;
+  font-size: 12px;  
+  color: gray;
+  text-align: left;
+}
+
+.profile-info a{
+  text-decoration: none;
+}
+
 .label {
   margin: 3px;
 }
@@ -120,7 +135,7 @@ body {
 
 /* Profile Content */
 .profile-content {
-  padding: 20px;
+  padding: 10px;
+  border-radius: 10px;
   background: #fff;
-  min-height: 460px;
 }
