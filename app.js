@@ -1,7 +1,13 @@
 angular.module('portfolioApp.services', [])
 angular.module('portfolioApp.controllers',[])
 
-var main = angular.module('portfolioApp',['ngRoute', 'ui.router','portfolioApp.controllers', 'portfolioApp.services', 'portfolioApp.controllers'])
+var main = angular.module('portfolioApp',['ngRoute',
+										
+										  'angular-loading-bar', 
+										  'ui.router',
+										  'portfolioApp.controllers', 
+										  'portfolioApp.services', 
+										  'portfolioApp.controllers'])
 
 main.config(function($stateProvider){
 	// Lists

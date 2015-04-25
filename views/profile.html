@@ -12,6 +12,9 @@
 					<div class="profile-usertitle-name">
 						{{profile.name}}
 					</div>
+					<div class="profile-userrole">
+						Web/Mobile Developer
+					</div>
 					<div class="profile-usertitle-job">
 						{{profile.location}}
 					</div>
@@ -19,12 +22,11 @@
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-success btn-sm">Follow</button>
-					<button type="button" class="btn btn-danger btn-sm">Message</button>
+					<a href="{{profile.html_url}}" class="btn btn-success btn-sm"><i class="fa fa-4x fa-github"></i>Visit Github Profile</a>
 				</div>
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu">
+				<!-- <div class="profile-usermenu">
 					<ul class="nav">
 						<li class="active">
 							<a href="#">
@@ -47,13 +49,41 @@
 							Help </a>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 				<!-- END MENU -->
 			</div>
 		</div>
 		<div class="col-md-9">
+
+			<div class="jumbotron">
+				<h1>About Me:</h1>
+				<p>At the moment I'm a freelancer developer based in New York City, USA</p>
+				<p> Founder of CAPITALOFCODE.COM</p>
+
+				Today, I spend most of my time programming for iOS and the Web using the Swift programming language and PHP.
+				If you are interested in hiring, I'm open to join a great team that is currently working on creating the new big thing! Looking forward to use my experience with PHP and my new passion, Swift for IOS, as well as the rest of my set of skills.
+
+			</div>
             <div class="profile-content">
-			   Some user related content goes here...
+            	<div class="row">
+	            	<div class="col-md-6">
+		            	<div class="profile-stats">
+						  	<i class="fa fa-5x fa-github-alt"></i> 
+						  	<div>Repositories</div>
+						  	<div>{{profile.public_repos}}</div>
+					  	</div>
+					  	<div>
+					  		<span ng-repeat="repo in repos" class="label label-default"><a ng-href="{{repo.html_url}}">{{repo.name}}</a></span>	
+					  	</div>
+				 	</div>
+				 	<div class="col-md-6">
+		            	<div class="profile-stats">
+						  	<i class="fa fa-5x fa-gittip"></i>
+						  	<div>Gists</div>
+						  	<div>{{profile.public_gists}}</div>
+					  	</div>
+				 	</div>
+				 </div>
             </div>
 		</div>
 	</div>

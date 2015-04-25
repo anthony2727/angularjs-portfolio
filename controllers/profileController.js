@@ -9,4 +9,10 @@ angular.module('portfolioApp.controllers')
 		$scope.profile = result.data
 	});
 
+	githubService.repos(username).then(function(result){
+		$scope.repos = result.data
+	})
+
+
+
 })
