@@ -1,5 +1,6 @@
 angular.module('portfolioApp.services', [])
 angular.module('portfolioApp.controllers',[])
+angular.module('portfolioApp.config',[])
 
 var main = angular.module('portfolioApp',['ngRoute',
 										
@@ -7,7 +8,8 @@ var main = angular.module('portfolioApp',['ngRoute',
 										  'ui.router',
 										  'portfolioApp.controllers', 
 										  'portfolioApp.services', 
-										  'portfolioApp.controllers'])
+										  'portfolioApp.controllers',
+										  'portfolioApp.config'])
 
 main.config(function($stateProvider){
 	// Lists

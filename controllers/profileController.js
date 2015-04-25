@@ -13,6 +13,8 @@ angular.module('portfolioApp.controllers')
 		$scope.repos = result.data
 	})
 
-
+	githubService.gists(username).then(function(result){
+		$scope.gists = result.data
+	})
 
 })
